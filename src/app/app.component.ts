@@ -14,14 +14,24 @@ export class AppComponent {
     this.toDoList.push(++this.taskNumber);
   }
 
-  removeLastTask(task) {
-    task = this.toDoList.lastIndexOf(task);
-    if (this.toDoList.length === 0 ) {
-      return;
-    } else {
-      this.toDoList.splice(task);
-    }
+// code after review
+removeLastTask(task) {
+  task = this.toDoList.lastIndexOf(task);
+  if (this.toDoList.length > 0) {
+    this.toDoList.splice(task);
   }
+}
+
+// start OLD code
+  // removeLastTask(task) {
+  //   task = this.toDoList.lastIndexOf(task);
+  //   if (this.toDoList.length === 0) {
+  //     return;
+  //   } else {
+  //     this.toDoList.splice(task);
+  //   }
+  // }
+// end OLD CODE
   removeAllTasks() {
     this.toDoList = [];
     this.taskNumber = 0;
